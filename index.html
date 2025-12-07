@@ -260,4 +260,300 @@
 
     .card h3 {
       font-size: 0.98rem;
-      margin-bottom: 0.25rem
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    .card small {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    .badge-row {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.6);
+      color: #e5e7eb;
+    }
+
+    .badge-soft {
+      background: rgba(15, 118, 110, 0.6);
+    }
+
+    .list-muted {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1rem;
+    }
+
+    .list-muted li {
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-box {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem 1.2rem;
+      border: 1px dashed rgba(75, 85, 99, 0.9);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.7rem;
+      font-size: 0.86rem;
+    }
+
+    .contact-row a {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 780px) {
+      .nav-inner {
+        padding-inline: 0.9rem;
+      }
+
+      nav ul {
+        gap: 0.7rem;
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1.6rem 1.3rem;
+      }
+
+      .hero-aside {
+        order: -1;
+        max-width: 210px;
+      }
+
+      .hero-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="nav-dot"></span>
+        <span>Jessica&nbsp;Zhou</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <!-- Home / Hero -->
+      <section id="home" class="hero">
+        <div>
+          <p class="hero-tagline">Data Scientist and ML Enthusiast</p>
+          <h1 class="hero-title">Hi, I'm Jessica Zhou.</h1>
+          <p class="hero-lead">
+            I work at the intersection of data, machine learning, and real-world products.
+            This is my digital home for ideas, projects, and notes as I keep learning.
+          </p>
+          <div class="hero-buttons">
+            <a href="#blog" class="btn btn-primary">Read the blog →</a>
+            <a href="#projects" class="btn btn-ghost">View projects</a>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Data Science</span>
+            <span class="pill">Experimentation</span>
+            <span class="pill">Personal Notes</span>
+          </div>
+        </div>
+
+        <aside class="hero-aside">
+          <div class="avatar">
+            JZ
+          </div>
+          <p class="avatar-note">
+            Replace this with a profile photo later if you'd like — for now it's your
+            initials glowing in ML-blue ✨
+          </p>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <h2 class="section-title">About</h2>
+        <p class="section-subtitle">
+          A quick snapshot of who I am and what I'm interested in.
+        </p>
+        <div class="card">
+          <p>
+            I'm a data scientist with a focus on machine learning, personalization, and
+            experimentation. I enjoy turning messy, real-world data into useful products
+            and decision tools.
+          </p>
+          <p style="margin-top:0.7rem;">
+            This site is my place to write about what I'm learning, document projects,
+            and share notes that might help future me (and maybe you) think more clearly
+            about data and systems.
+          </p>
+          <ul class="list-muted" style="margin-top:0.8rem;">
+            <li>Interests: recommender systems, causal inference, RL, search & ranking</li>
+            <li>Also curious about: investing, logistics, and how organizations learn</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Blog -->
+      <section id="blog">
+        <h2 class="section-title">Blog</h2>
+        <p class="section-subtitle">
+          Short notes, deeper dives, and half-baked thoughts I'm comfortable sharing publicly.
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>📌 Getting this site online</h3>
+            <small>First post · 2025</small>
+            <p>
+              A lightweight walkthrough of how I set up this GitHub Pages site and how
+              I plan to use it as a personal knowledge base going forward.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>🧠 Ideas I think about</h3>
+            <small>Notes</small>
+            <p>
+              A running collection of questions on ML, experiment design, and career
+              growth in data science. Not answers, mostly prompts to revisit.
+            </p>
+          </article>
+        </div>
+
+        <p class="section-subtitle" style="margin-top: 1rem;">
+          To add a new post later, you can simply duplicate one of these cards in the HTML
+          or move to a proper blog structure with separate pages.
+        </p>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">
+          A few things I've worked on or am currently exploring.
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Recommender Systems & Personalization</h3>
+            <small>Professional</small>
+            <p>
+              Building and iterating on recommendation pipelines, from feature engineering
+              and offline evaluation to online experimentation.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Ranking</span>
+              <span class="badge">Feature Engineering</span>
+              <span class="badge badge-soft">A/B Testing</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>ML + Search Experiments</h3>
+            <small>Professional / Learning</small>
+            <p>
+              Exploring hybrid search (lexical + vector), embeddings, and retrieval-augmented
+              systems, with a focus on practical metrics and failure analysis.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Search</span>
+              <span class="badge">Embeddings</span>
+              <span class="badge badge-soft">Evaluation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Learning Notes & Mini-Projects</h3>
+            <small>Personal</small>
+            <p>
+              Small experiments from courses, papers, and curiosity: from classic algorithms
+              to modeling exercises and visualization prototypes.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Python</span>
+              <span class="badge badge-soft">Notebooks</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          If something here resonates, I'm always open to thoughtful messages.
+        </p>
+
+        <div class="contact-box">
+          <p>
+            Easiest way to reach me is by email or via my professional profiles.
+            (Replace the links below with your actual details.)
+          </p>
+          <div class="contact-row">
+            <span>📧 Email:
+              <a href="mailto:your.email@example.com">your.email@example.com</a>
+            </span>
+            <span>💼 LinkedIn:
+              <a href="https://www.linkedin.com/">linkedin.com/in/your-profile</a>
+            </span>
+            <span>💻 GitHub:
+              <a href="https://github.com/Haizhuolaojisite">github.com/Haizhuolaojisite</a>
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Jessica Zhou. Built with GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    // set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
