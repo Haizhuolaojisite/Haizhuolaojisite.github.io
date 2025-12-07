@@ -12,16 +12,23 @@
 
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --card: #111827;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius: 16px;
-      --shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      /* CHANGED: Warm "Cream" Palette */
+      --bg: #fffbeb;        /* Very light warm cream */
+      --bg-alt: #ffffff;    /* Pure white */
+      --card: #ffffff;      /* White cards */
+      
+      /* CHANGED: "Happy" Accent Colors (Sunny Orange/Gold) */
+      --accent: #f59e0b;    /* Bright Amber */
+      --accent-hover: #d97706; 
+      --accent-soft: rgba(245, 158, 11, 0.1);
+      
+      /* CHANGED: Text adjusted for light background */
+      --text: #1f2937;      /* Dark gray (almost black) for readability */
+      --muted: #6b7280;     /* Medium gray for subtitles */
+      --border: #fcd34d;    /* Soft gold border */
+      
+      --radius: 20px;       /* Slightly rounder corners for a friendlier look */
+      --shadow: 0 10px 40px -10px rgba(245, 158, 11, 0.15); /* Soft, warm glow */
       --max-width: 920px;
     }
 
@@ -33,7 +40,8 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top left, #1f2937, #020617 55%);
+      /* CHANGED: Soft warm gradient instead of dark radial */
+      background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -54,9 +62,10 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6));
-      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+      backdrop-filter: blur(12px);
+      /* CHANGED: White semi-transparent glass */
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(252, 211, 77, 0.3);
     }
 
     .nav-inner {
@@ -71,11 +80,12 @@
 
     .nav-brand {
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: -0.01em;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
+      color: #111827;
     }
 
     .nav-dot {
@@ -83,7 +93,7 @@
       height: 10px;
       border-radius: 999px;
       background: var(--accent);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
     }
 
     nav ul {
@@ -95,13 +105,14 @@
 
     nav a {
       color: var(--muted);
+      font-weight: 500;
       padding-bottom: 0.1rem;
       border-bottom: 2px solid transparent;
-      transition: color 0.18s ease, border-color 0.18s ease;
+      transition: all 0.2s ease;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent-hover);
       border-color: var(--accent);
     }
 
@@ -110,38 +121,42 @@
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
 
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
-      padding: 2rem 1.5rem;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(17, 24, 39, 0.98));
+      padding: 2.5rem;
+      /* CHANGED: White card against cream background */
+      background: #ffffff;
       border-radius: 24px;
       box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(251, 191, 36, 0.2);
     }
 
     .hero-title {
-      font-size: 2.1rem;
-      font-weight: 700;
+      font-size: 2.2rem;
+      font-weight: 800;
       margin-bottom: 0.5rem;
+      color: #111827; /* Deep black for title */
     }
 
     .hero-tagline {
       font-size: 1rem;
       color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .hero-lead {
       color: var(--muted);
-      font-size: 0.97rem;
-      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
@@ -151,209 +166,278 @@
     }
 
     .btn {
-      padding: 0.55rem 1.1rem;
-      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
       border-radius: 999px;
       border: 1px solid transparent;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: background 0.18s ease, transform 0.12s ease, border-color 0.18s ease, color 0.18s ease;
+      font-weight: 600;
+      transition: all 0.2s ease;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #0b1220;
-      font-weight: 600;
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.45);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.6);
+      transform: translateY(-2px);
+      background: var(--accent-hover);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
     }
 
     .btn-ghost {
-      border-color: rgba(148, 163, 184, 0.6);
+      border-color: #d1d5db;
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.3);
+      background: transparent;
     }
 
     .btn-ghost:hover {
       border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
+      color: var(--accent-hover);
+      background: #fffbeb;
+      transform: translateY(-2px);
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
     }
 
     .pill {
-      border-radius: 999px;
-      padding: 0.2rem 0.7rem;
-      border: 1px solid rgba(55, 65, 81, 0.8);
+      border-radius: 8px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid #e5e7eb;
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.7);
+      background: #f9fafb;
+      font-weight: 500;
     }
 
     .hero-aside {
       justify-self: center;
-      padding: 1.1rem;
+      padding: 1rem;
       border-radius: 22px;
-      background: radial-gradient(circle at top, var(--accent-soft), rgba(15, 23, 42, 0.9));
-      border: 1px solid rgba(55, 65, 81, 0.9);
+      /* CHANGED: Soft gradient background behind avatar */
+      background: linear-gradient(135deg, #fff7ed, #fffbeb);
+      border: 1px solid rgba(251, 191, 36, 0.2);
       width: 100%;
-      max-width: 260px;
+      max-width: 280px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     }
 
     .avatar {
       width: 100%;
       aspect-ratio: 1 / 1;
       border-radius: 20px;
-      border: 2px solid rgba(148, 163, 184, 0.9);
+      border: 4px solid #ffffff; /* Thick white border */
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.6rem;
+      font-size: 3rem;
       font-weight: 700;
-      background: radial-gradient(circle at top, #38bdf8, #0f172a);
-      color: #0b1220;
+      /* CHANGED: Happy gradient */
+      background: linear-gradient(to top right, #f59e0b, #fcd34d);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
     }
 
     .avatar-note {
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
       color: var(--muted);
+      text-align: center;
+      line-height: 1.4;
     }
 
     .section-title {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-weight: 700;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Small decorative line next to titles */
+    .section-title::before {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 4px;
     }
 
     .section-subtitle {
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: var(--muted);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 1rem 1rem 1.1rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.7);
+      padding: 1.5rem;
+      border: 1px solid #f3f4f6; /* Very subtle grey border */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.05);
+      border-color: rgba(245, 158, 11, 0.3);
     }
 
     .card h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.25rem;
-      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      color: #1f2937;
     }
 
     .card small {
-      font-size: 0.76rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
     }
 
     .card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-top: 0.8rem;
+      line-height: 1.6;
     }
 
     .badge-row {
-      margin-top: 0.7rem;
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem;
+      gap: 0.5rem;
     }
 
+    /* CHANGED: Badges now use light backgrounds */
     .badge {
-      font-size: 0.72rem;
-      padding: 0.15rem 0.55rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.65rem;
       border-radius: 999px;
-      background: rgba(30, 64, 175, 0.6);
-      color: #e5e7eb;
+      background: #eff6ff; /* Light blue background */
+      color: #2563eb;       /* Dark blue text */
+      font-weight: 600;
     }
 
     .badge-soft {
-      background: rgba(15, 118, 110, 0.6);
+      background: #ecfdf5; /* Light green */
+      color: #059669;      /* Dark green */
     }
 
     .list-muted {
-      font-size: 0.85rem;
-      color: var(--muted);
-      padding-left: 1rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+      padding-left: 1.2rem;
+      margin-top: 1rem;
     }
 
     .list-muted li {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
 
     .contact-box {
-      background: var(--card);
+      background: #ffffff;
       border-radius: var(--radius);
-      padding: 1rem 1.2rem 1.2rem;
-      border: 1px dashed rgba(75, 85, 99, 0.9);
+      padding: 2rem;
+      border: 2px dashed #e5e7eb;
+      text-align: center;
     }
 
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 0.7rem;
-      font-size: 0.86rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      justify-content: center;
+      font-size: 1rem;
     }
 
     .contact-row a {
-      color: var(--accent);
+      color: var(--accent-hover);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(245, 158, 11, 0.3);
+      text-underline-offset: 4px;
+    }
+
+    .contact-row a:hover {
+      text-decoration-color: var(--accent);
     }
 
     footer {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      font-size: 0.78rem;
-      color: var(--muted);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.85rem;
+      color: #9ca3af;
       text-align: center;
     }
 
     @media (max-width: 780px) {
       .nav-inner {
-        padding-inline: 0.9rem;
+        padding-inline: 1rem;
       }
 
       nav ul {
-        gap: 0.7rem;
-        font-size: 0.8rem;
+        gap: 0.8rem;
+        font-size: 0.85rem;
       }
 
       .hero {
         grid-template-columns: minmax(0, 1fr);
-        padding: 1.6rem 1.3rem;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .hero-buttons, .pill-row {
+        justify-content: center;
       }
 
       .hero-aside {
         order: -1;
-        max-width: 210px;
+        max-width: 200px;
+        margin-bottom: 1rem;
       }
 
       .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        justify-content: center;
+      }
+      
+      .section-title::before {
+        display: none; /* remove accent bar on mobile for centered look */
+      }
+      
+      .section-subtitle {
+        text-align: center;
+        margin-inline: auto;
       }
     }
   </style>
@@ -379,7 +463,6 @@
 
   <div class="page">
     <main>
-      <!-- Home / Hero -->
       <section id="home" class="hero">
         <div>
           <p class="hero-tagline">Data Scientist and ML Enthusiast</p>
@@ -406,12 +489,11 @@
           </div>
           <p class="avatar-note">
             Replace this with a profile photo later if you'd like — for now it's your
-            initials glowing in ML-blue ✨
+            initials glowing in sunshine yellow ☀️
           </p>
         </aside>
       </section>
 
-      <!-- About -->
       <section id="about">
         <h2 class="section-title">About</h2>
         <p class="section-subtitle">
@@ -428,14 +510,13 @@
             and share notes that might help future me (and maybe you) think more clearly
             about data and systems.
           </p>
-          <ul class="list-muted" style="margin-top:0.8rem;">
-            <li>Interests: recommender systems, causal inference, RL, search & ranking</li>
-            <li>Also curious about: investing, logistics, and how organizations learn</li>
+          <ul class="list-muted">
+            <li>✨ <strong>Interests:</strong> Recommender systems, causal inference, RL, search & ranking</li>
+            <li>🌱 <strong>Curious about:</strong> Investing, logistics, and how organizations learn</li>
           </ul>
         </div>
       </section>
 
-      <!-- Blog -->
       <section id="blog">
         <h2 class="section-title">Blog</h2>
         <p class="section-subtitle">
@@ -462,13 +543,12 @@
           </article>
         </div>
 
-        <p class="section-subtitle" style="margin-top: 1rem;">
+        <p class="section-subtitle" style="margin-top: 1rem; font-size: 0.9rem;">
           To add a new post later, you can simply duplicate one of these cards in the HTML
           or move to a proper blog structure with separate pages.
         </p>
       </section>
 
-      <!-- Projects -->
       <section id="projects">
         <h2 class="section-title">Projects</h2>
         <p class="section-subtitle">
@@ -537,7 +617,6 @@
         </div>
       </section>
 
-      <!-- Contact -->
       <section id="contact">
         <h2 class="section-title">Contact</h2>
         <p class="section-subtitle">
@@ -547,7 +626,6 @@
         <div class="contact-box">
           <p>
             Easiest way to reach me is by email or via my professional profiles.
-            (Replace the links below with your actual details.)
           </p>
           <div class="contact-row">
             <span>📧 Email:
